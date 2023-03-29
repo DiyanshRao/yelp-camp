@@ -1,0 +1,37 @@
+<% layout('layout/BoilerPlate') %>
+
+<div class="row">
+    <h1 class="text-center">Update Campgrouds</h1>
+    <div class="col-6 offset-3">
+        <form action ="/campgrounds/<%=campground._id%>?_method=PUT" method ="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">title</label>
+                <input class="form-control" type="text" id="title" name ="campground[title]"value="<%= campground.title %>"required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"for="location" >location</label>
+                <input class="form-control" type="text" id="location" name ="campground[location]"value="<%= campground.location %>"required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"for="price" >price</label>
+               <div class="input-group">
+                   <span class="input-group-text" id="price-label">₹</span>
+                   <input type="text" class="form-control" id="price" placeholder="0.0" aria-label="price-label" aria-describedby="price-label" name ="campground[price]"value="<%= campground.price %>"required>
+               </div>
+            </div> 
+            <div class="mb-3">
+                <label class="form-label" for="description">description</label>
+                <textarea class="form-control" type="text" id="description" name ="campground[title]"required><%= campground.description %></textarea>
+            </required
+            <div class="mb-3">
+                <label class="form-label" for="tite">image</label>
+                <input class="form-control" type="text" id="title" name ="campground[title]" value="<%= campground.image %>"required>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update campground</button>
+            </div>
+            
+        </form>
+        <a href="/campgrounds/<%= campground._id%>">Back to Campground</a>
+    </div>   
+</div>
